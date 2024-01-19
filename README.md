@@ -1,4 +1,4 @@
-# Fulmine Labs Mini-PACS
+# Fulmine Labs mini-PACS
 Implement a basic Picture Archive Communication System (PACS) to manage DICOM images.
 
 Date: 1/16/2024
