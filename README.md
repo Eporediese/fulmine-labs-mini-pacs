@@ -167,12 +167,16 @@ Examining the OHIF source code could help explain this and potentially enhance t
 See below for examples:
 
 ![alt text](generated_000c2fcd-63c0-4f4d-a96d-d519c00c1d0f.png "Generated image example 1")
+Fulmine
 
 ![alt text](OHIF_000c2fcd-63c0-4f4d-a96d-d519c00c1d0f.png "OHIF image example 1")
+OHIF
 
 ![alt text](generated_1fa2a798-770f-4542-b877-946c0757cac2.png "Generated image example 2")
+Fulmine
 
 ![alt text](OHIF_1fa2a798-770f-4542-b877-946c0757cac2.png "OHIF image example 2")
+OHIF
 
 2) The OHIF Viewer handles images that do not have Window Center and/or Window Width in the DICOM header. The PNG creation process currently ignores these images. Again, examining the OHIF source code and the DICOM standard could help explain the OHIF methodology and potentially include a wider range of images in the PNG training image creation process.
 
