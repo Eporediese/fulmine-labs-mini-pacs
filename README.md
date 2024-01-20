@@ -199,9 +199,13 @@ MIT open source license
 We welcome contributions at all levels of experience, whether it's with code, documentation, tests, bug reports, feature requests, or other forms of feedback. If you're interested in helping improve this tool, here are some ways you can contribute:
 
 Ideas for Improvements: Have an idea that could make the Fulmine Labs Mini-PACS better? Open an issue with the tag enhancement to start a discussion about your idea.
+
 Bug Reports: Notice something amiss? Submit a bug report under issues, and be sure to include as much detail as possible to help us understand the problem.
+
 Feature Requests: If you have a suggestion for a new feature, describe it in an issue with the tag feature request.
+
 Documentation: Good documentation is just as important as good code. Although this is currently a very simple tool, if you'd like to contribute documentation, we'd greatly appreciate it.
+
 Code: If you're looking to update or write new code, check out the open issues and look for ones tagged with good first issue or help wanted.
 
 ## Contact
