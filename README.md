@@ -102,7 +102,7 @@ This includes setting parameters like storage directories, enabling the DICOM an
 Navigate to the Cloned Directory: cd Viewers
 Add the original OHIF Viewer repository as an upstream remote to your local repository: `git remote add upstream https://github.com/OHIF/Viewers.git`
 * Run `yarn install` to install all necessary dependencies.
-* Start the OHIF Viewer using the appropriate Yarn command: `yarn run dev:orthanc_`
+* Start the OHIF Viewer using the appropriate Yarn command: `yarn run dev:orthanc`
 * Viewing Studies: Once the viewer is running correctly, confirm that you are able to view the studies hosted on your Orthanc server.
 
 3) Clone the Fulmine-Labs-Mini-PACS repository to your local machine and navigate to the cloned directory in Anaconda Powershell Prompt: 'cd Fulmine-Labs-Mini-PACS'
