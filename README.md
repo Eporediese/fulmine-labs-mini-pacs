@@ -1,7 +1,8 @@
 # Fulmine Labs mini-PACS
 Implement a basic Picture Archive Communication System (PACS) to manage DICOM images.
+Use these images to implement an anomaly detection system, to help with test automation.
 
-Date: 1/16/2024
+Date: 2/26/2024
 
 Fulmine Labs LLC
 
@@ -57,6 +58,52 @@ Currently supported endpoints (usually at `http://127.0.0.1:5000`) are:
 * '/series/count' - get total series count
 * '/images/count' - get total images count
 * '/imageinfo/<filename>' - get image info by providing the file name
+
+Overall the folder structure looks like this:
+
+```
+Orthanc (DICOM)
+  ├── subfolders
+
+training (PNG)
+  ├──train
+  ├──validate
+  ├──test
+
+Kaggle_real_and_fake_images (PNG)
+  ├── subfolders
+
+Custom_invalid (MIX)
+  ├── subfolders
+
+Custom_test_valid
+
+training_images
+  ├──train
+  │		├── valid
+  │		│  original training
+  │		│   ├── blurred
+  │		│   └── window_leveled
+  │		└── invalid/
+  │   		 	├── Kaggle_real_and_fake_images
+  │    	 		├── copied from Custom_invalid
+  ├──validate
+  │		├── valid
+  │		│  original validate
+  │		│   ├── blurred
+  │		│   └── window_leveled
+  │		└── invalid/
+  │   		 	├── Kaggle_real_and_fake_images
+  │    	 		├── copied from Custom_invalid
+  ├──test
+ 	├── valid
+ 	│  original test
+		├── copied from Custom_test_valid
+ 	└── invalid/
+     	 	├── Kaggle_real_and_fake_images
+      	 	├── copied from Custom_invalid
+
+```
 
 ## Datasources used
 
