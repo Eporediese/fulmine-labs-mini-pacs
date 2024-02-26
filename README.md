@@ -59,10 +59,24 @@ Currently supported endpoints (usually at `http://127.0.0.1:5000`) are:
 * '/images/count' - get total images count
 * '/imageinfo/<filename>' - get image info by providing the file name
 
+Once PNG images have been generated from the DICOM images, these will be used as the basis of the 'valid' class in an ML image classifier. To reduce overfitting, additional images are generated and added to the valid class. These include:
+
+* The same images with random window centers and widths
+* The same images with light random blurring to simulate pixel interpolation or compression
+
+The 'invalid' class will be comprised of, for example:
+
+* Non-medical images selected from the Kaggle 'real and fake' dataset
+* The same valid images as above with simulated error/message boxes in order to help to detect anomalous conditions
+* Some custom anomalous images, including AI-generated medical images
+
+All of the imaages above will be distributed randomly between training, validation and testing folders in order to train and test the model.
+In addition, in order to test how well the model recognizes previously unseen medical images of the same type, some custom images will be selected from Google searches and used only for testing.
+
 Overall the folder structure looks like this:
 
 ```
-Orthanc (DICOM)
+Orthanc (DICOM images)
   ├── subfolders
 
 training (PNG)
@@ -107,7 +121,8 @@ training_images
 
 ## Datasources used
 
-The Cancer Imaging Archive
+* The Cancer Imaging Archive.
+* The Kaggle 'Real and Fake' dataset.
 
 ## Current Version
 The current stable version of the project is 0.1.0.
