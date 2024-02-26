@@ -7,7 +7,7 @@ Date: 2/26/2024
 Fulmine Labs LLC
 
 ## Overview
-The challenge: Fulmine Labs will use medical images for various quality/testing related, machine learning (ML) initiatives. 
+The challenge: Fulmine Labs will use medical images for quality/testing related, machine learning (ML) initiatives. 
 The best practice for managing this data is to use Digital Imaging and Communications in Medicine (DICOM) standard compliant images with a PACS-like system.
 
 The code in this project implements and tests a basic PACS with the following architecture:
@@ -70,7 +70,7 @@ The 'invalid' class will be comprised of, for example:
 * The same valid images as above with simulated error/message boxes in order to help to detect anomalous conditions
 * Some custom anomalous images, including AI-generated medical images
 
-All of the imaages above will be distributed randomly between training, validation and testing folders in order to train and test the model.
+All of the images above will be distributed randomly between training, validation and testing folders in order to train and test the model.
 In addition, in order to test how well the model recognizes previously unseen medical images of the same type, some custom images will be selected from Google searches and used only for testing.
 
 Overall the folder structure looks like this:
@@ -118,6 +118,22 @@ training_images
       	 	├── copied from Custom_invalid
 
 ```
+
+Once the data is prepared, the classifier model training is initiated. 
+The model is saved and reloaded and used to test those images selected for testing, producing metrics on Accuracy, Precision, Recall and F1 score.
+At the time of writing the model has the following scores:
+
+- True Positives: 3143
+- False Positives: 6
+- True Negatives: 2737
+- False Negatives: 5
+- Accuracy: 0.9981
+- Precision: 0.9981
+- Recall: 0.9984
+- F1 Score: 0.9983
+
+All of the (5) false negatives are from the (7) valid medical images selected from the internet, suggesting that model is overfitting the training data. This is where efforts need to be focussed.
+The handful of false positives are less of a problem, as anomalies are expected to happen infrequently and will therefore be misclassified only very infrequently.
 
 ## Datasources used
 
