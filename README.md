@@ -1,6 +1,9 @@
-# Fulmine Labs mini-PACS
+# Fulmine Labs mini-PACS (aka Eyball)
+
 Implement a basic Picture Archive Communication System (PACS) to manage DICOM images.
 Use these images to implement an anomaly detection system, to help with test automation.
+
+[Eyball](eyball3.png)
 
 Date: 2/26/2024
 
