@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ******************************************
 
+## [0.2.0] - 03/02/2023
+- Added support for classifier model generation and an image pipeline to generate augmented images before training the model
+
 ## [0.1.0] - 01/19/2023
 ### Added
 - Initial release of the project.
