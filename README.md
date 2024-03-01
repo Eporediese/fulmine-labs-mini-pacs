@@ -140,13 +140,10 @@ At the time of writing the model has the following scores:
 - Recall: 0.9984
 - F1 Score: 0.9983
 
-All of the (5) false negatives are from the (7) valid medical images selected from the internet, suggesting that model is overfitting the training data. This is where efforts need to be focussed.
-The handful of false positives are less of a problem, as anomalies are expected to happen infrequently and will therefore be misclassified only very infrequently.
-
 ## Datasources used
 
 * The Cancer Imaging Archive.
-* The Kaggle 'Real and Fake' dataset.
+* The Artifact 'Real and Fake' dataset from Kaggle.
 
 ## Current Version
 The current stable version of the project is 0.1.0.
@@ -158,6 +155,7 @@ See the [CHANGELOG.md](CHANGELOG.md) file for details about this version.
 * The Orthanc open source DICOM server (optional)
 * The OHIF Viewer integrated with Orthanc (optional). For this you will need a [Github](https://github.com/) account and Node Package Manager -> nodejs -> yarn.
 * DICOM images
+* The [Artifact](https://www.kaggle.com/datasets/awsaf49/artifact-dataset) Real and Fake image dataset from Kaggle
 
 ## Usage
 
