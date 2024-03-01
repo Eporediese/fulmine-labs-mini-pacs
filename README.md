@@ -3,9 +3,9 @@
 Implement a basic Picture Archive Communication System (PACS) to manage DICOM images.
 Use these images to implement an anomaly detection system, to help with test automation.
 
-[Eyball](eyball3.png)
+![Eyball](eyball3.png "Eyball")
 
-Date: 2/26/2024
+Date: 3/2/2024
 
 Fulmine Labs LLC
 
