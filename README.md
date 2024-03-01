@@ -59,10 +59,12 @@ Currently supported endpoints (usually at `http://127.0.0.1:5000`) are:
 * '/images/count' - get total images count
 * '/imageinfo/<filename>' - get image info by providing the file name
 
-Once PNG images have been generated from the DICOM images, these will be used as the basis of the 'valid' class in an ML image classifier. To reduce overfitting, additional images are generated and added to the valid class. These include:
+Once PNG images have been generated from the DICOM images, these are used as the basis of the 'valid' class in an ML image classifier. To reduce overfitting, additional images are generated and added to the valid class. These include:
 
 * The same images with random window centers and widths
 * The same images with light random blurring to simulate pixel interpolation or compression
+* The same images with flips and rotations
+* The same images zoomed in and out, also with  random window centers and widths
 
 The 'invalid' class will be comprised of, for example:
 
@@ -98,6 +100,9 @@ training_images
   │		│  original training
   │		│   ├── blurred
   │		│   └── window_leveled
+  │		│   └── rotate_and_flip
+  │		│   └── zoomed
+  |             |     └── window_leveled
   │		└── invalid/
   │   		 	├── Kaggle_real_and_fake_images
   │    	 		├── copied from Custom_invalid
@@ -106,6 +111,9 @@ training_images
   │		│  original validate
   │		│   ├── blurred
   │		│   └── window_leveled
+  │		│   └── rotate_and_flip
+  │		│   └── zoomed
+  |             |     └── window_leveled
   │		└── invalid/
   │   		 	├── Kaggle_real_and_fake_images
   │    	 		├── copied from Custom_invalid
