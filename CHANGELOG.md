@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ******************************************
 
+## [0.2.1] - 03/04/2023
+- Fixed some syntax errors and logging issues
+
 ## [0.2.0] - 03/02/2023
 - Added support for classifier model generation and an image pipeline to generate augmented images before training the model
 
