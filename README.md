@@ -139,7 +139,7 @@ The model is saved and reloaded and used to test those images selected for testi
 * The Artifact 'Real and Fake' dataset from Kaggle.
 
 ## Current Version
-The current stable version of the project is 0.2.0.
+The current stable version of the project is 0.2.1.
 See the [CHANGELOG.md](CHANGELOG.md) file for details about this version.
 
 ## Prerequisites
