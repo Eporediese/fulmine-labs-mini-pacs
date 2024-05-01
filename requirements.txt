@@ -1,9 +1,26 @@
-os
-random
+tensorflow==2.15.0
 pydicom
-sqlite3
-shutil 
-logging
-datetime
 numpy
-PIL
+Pillow
+scipy
+scikit-learn
+matplotlib
+
+# Database
+sqlite3
+
+# Logging
+logging
+
+# Image manipulation
+scipy
+
+# Others
+random
+os
+shutil
+csv
+datetime
+typing
+itertools
+textwrap
