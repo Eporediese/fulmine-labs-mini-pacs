@@ -1,11 +1,11 @@
-# Fulmine Labs mini-PACS (aka Eyball)
+# Fulmine Labs mini-PACS (model generation for medical image Anomaly Detection)
 
 Implement a basic Picture Archive Communication System (PACS) to manage DICOM images.
 Use these images to implement an anomaly detection system, to help with test automation.
 
 ![Eyball](eyball3.png "Eyball")
 
-Date: 3/2/2024
+Date: 5/1/2024
 
 Fulmine Labs LLC
 
@@ -36,7 +36,7 @@ The code in this project implements and tests a basic PACS with the following ar
        |
        | (Model Training Data)
        v
-[ Anomaly Detection Model Training Script (separate repository) ]
+[ Anomaly Detection Model Training ]
 
 ```
 
@@ -84,7 +84,7 @@ Overall the folder structure looks like this:
 Orthanc (DICOM images)
   ├── subfolders
 
-training (PNG)
+original training (PNG)
   ├──train
   ├──validate
   ├──test
@@ -95,43 +95,56 @@ Kaggle_real_and_fake_images (PNG)
 Custom_invalid (MIX)
   ├── subfolders
 
-Custom_test_valid
+Custom_test_valid (from internet)
 
 training_images
   ├──train
   │		├── valid
-  │		│  original training
+  │		│   ├── original training (dummy)
   │		│   ├── blurred
   │		│   └── window_leveled
-  │		│   └── rotate_and_flip
-  │		│   └── zoomed
-  |             |     └── window_leveled
+  │	    	│   └── rotate_and_flip
+  │    		│   └── zoomed
+  |    		|     └── window_leveled
   │		└── invalid/
   │   		 	├── Kaggle_real_and_fake_images
-  │    	 		├── copied from Custom_invalid
+  │    	 		└── copied from Custom_invalid
   ├──validate
   │		├── valid
-  │		│  original validate
+  │		│   ├── original validate (dummy)
   │		│   ├── blurred
-  │		│   └── window_leveled
-  │		│   └── rotate_and_flip
+  │		│   ├── window_leveled
+  │		│   ├── rotate_and_flip
   │		│   └── zoomed
-  |             |     └── window_leveled
+  |     	|     └── window_leveled
   │		└── invalid/
   │   		 	├── Kaggle_real_and_fake_images
-  │    	 		├── copied from Custom_invalid
+  │    	 		└── copied from Custom_invalid
   ├──test
- 	├── valid
- 	│  original test
-		├── copied from Custom_test_valid
- 	└── invalid/
-     	 	├── Kaggle_real_and_fake_images
-      	 	├── copied from Custom_invalid
+     ├──valid
+     │  	├── original test (dummy)
+     │		├── copied from Custom_test_valid
+     └── invalid/
+          	├── Kaggle_real_and_fake_images
+           	└── copied from Custom_invalid
+
+pairs_data
+  ├──train_pairs.txt
+  ├──validate_pairs.txt
+  └──test_pairs.txt  
 
 ```
 
-Once the data is prepared, the classifier model training is initiated. 
-The model is saved and reloaded and used to test those images selected for testing, producing metrics on Accuracy, Precision, Recall and F1 score.
+Once the data is prepared, the Siamese Network model training is initiated. 
+The model and weights are saved and the weights are reloaded and used to test those images selected for testing, producing metrics on Accuracy, Precision, Recall and F1 score, as well as display the images that failed 
+for analysis.
+Although this code trains and tests a Siamese Network architecture moodel the functions and folder structure also support training Classifier and Encoder architecture models. 
+The perormancce of these architectures have been compared and although the F1 scores are similiar they tend to perform less well than the Siamese Network models with medical images that were not part of the 
+selected training studies.
+Therefore it is suggested that the Siamese Network model is used. On 043024, this model had an F1 score as below:
+* 2024-04-29 16:15:49 - INFO - Siamese network F1 Score: 0.9850479803615264
+* 2024-04-29 16:15:49 - INFO - False Negatives detected by Siamese Network: 27
+The model and weights are included in this repository and will also be available in the Eyball repository.
 
 ## Datasources used
 
@@ -283,8 +296,6 @@ Fulmine
 OHIF
 
 2) The OHIF Viewer handles images that do not have Window Center and/or Window Width in the DICOM header. The PNG creation process currently ignores these images. Again, examining the OHIF source code and the DICOM standard could help explain the OHIF methodology and potentially include a wider range of images in the PNG training image creation process.
-
-3) The model is still overfitting slightly with respect to randomly selected internet Lung CT studies. It also produces a few false positives with the message box overlay images and some Artifact dataset images that have bright centers and darker edges.
 
 ## Acknowledgements
 
