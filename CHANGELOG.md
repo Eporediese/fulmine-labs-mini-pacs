@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ******************************************
 
+## [0.3.0] - 05/06/2023
+- Added code to train and test Classifier, Autoencoder and Siamese Network models
+
 ## [0.2.1] - 03/04/2023
 - Fixed some syntax errors and logging issues
 
