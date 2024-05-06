@@ -152,7 +152,7 @@ The model and weights are included in this repository and will also be available
 * The Artifact 'Real and Fake' dataset from Kaggle.
 
 ## Current Version
-The current stable version of the project is 0.2.1.
+The current stable version of the project is 0.3.0.
 See the [CHANGELOG.md](CHANGELOG.md) file for details about this version.
 
 ## Prerequisites
@@ -296,6 +296,10 @@ Fulmine
 OHIF
 
 2) The OHIF Viewer handles images that do not have Window Center and/or Window Width in the DICOM header. The PNG creation process currently ignores these images. Again, examining the OHIF source code and the DICOM standard could help explain the OHIF methodology and potentially include a wider range of images in the PNG training image creation process.
+
+3) There were issues with the model.fit function when training models if the Tensorflow version was greater than 2.15.0. Suggest sticking at 2.15.0 and trying again with a later version.
+
+4) There were Jupyter crash issues loading the saved Siamese Network model. Saving and loading just the weights seems to workaround this.
 
 ## Acknowledgements
 
